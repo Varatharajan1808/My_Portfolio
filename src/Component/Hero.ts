@@ -63,7 +63,7 @@ export function createHero(scrollToContact: ScrollToContact): HTMLElement {
 
   // Download Resume button
   const resumeBtn = document.createElement('a');
-  resumeBtn.href = 'public/T VARATHA RAJAN _RESUME.pdf';
+  resumeBtn.href = 'T VARATHA RAJAN _ RESUME.pdf';
   resumeBtn.download = 'T VARATHA RAJAN _RESUME.pdf';
   resumeBtn.className = 'btn-secondary flex items-center gap-2';
   resumeBtn.innerHTML = `
