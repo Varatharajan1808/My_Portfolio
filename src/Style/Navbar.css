@@ -1,0 +1,66 @@
+/* === Auto-Responsive Navigation === */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+  z-index: 1000;
+  padding: clamp(0.75rem, 1.5vw, 1rem) 0; /* Fluid padding */
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2rem); /* Fluid padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping if needed */
+}
+
+.logo {
+  font-size: clamp(1.25rem, 3vw, 1.5rem); /* Fluid font size */
+  font-weight: 800;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: clamp(0.75rem, 2vw, 2rem); /* Fluid gap */
+  flex-wrap: wrap; /* Allow links to wrap */
+  justify-content: center; /* Center when wrapped */
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: clamp(0.8rem, 1.5vw, 1rem); /* Fluid font size */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Keep all your existing hover effects */
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}

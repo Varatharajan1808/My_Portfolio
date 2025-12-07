@@ -1,0 +1,46 @@
+/* === Contact Info === */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  padding: clamp(1rem, 5vw, 3rem);
+}
+
+.info-section {
+  margin-bottom: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.info-title {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+}
+
+.info-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  max-width: 60ch;
+}
+@media (max-width: 768px) {
+  .contact-info {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .info-description {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-title {
+    text-align: center;
+  }
+
+  .info-description {
+    text-align: center;
+  }
+}
+

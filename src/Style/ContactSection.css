@@ -1,0 +1,47 @@
+/* === Contact Section === */
+.contact-section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: rgba(30, 41, 59, 0.3);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(64, 201, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(232, 28, 255, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(64, 201, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(64, 201, 255, 0.02) 1px, transparent 1px);
+  background-size: clamp(30px, 5vw, 40px) clamp(30px, 5vw, 40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-container {
+  max-width: 95%;
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+  position: relative;
+  z-index: 1;
+}

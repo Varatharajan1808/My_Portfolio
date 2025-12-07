@@ -1,0 +1,212 @@
+/* === Projects Grid === */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.project-card {
+  background: rgba(30, 27, 47, 0.8);
+  border: 1px solid rgba(71, 85, 105, 0.3);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow);
+  transform-style: preserve-3d;
+  position: relative;
+  will-change: transform;
+}
+
+.card-glare {
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  mix-blend-mode: overlay;
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(64, 201, 255, 0.5);
+}
+
+.project-image {
+  height: 200px;
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  opacity: 0.1;
+}
+
+.project-placeholder {
+  font-size: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-content h3 {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.project-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.project-tech {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.project-tech span {
+  background: rgba(177, 107, 255, 0.1);
+  color: var(--accent-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(177, 107, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* === Animations === */
+.fade-in {
+  opacity: 0;
+  transform: translateY(2rem);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.fade-in:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.fade-in:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.fade-in:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1.25rem);
+  }
+}
+
+/* === Responsive Fluid Layout === */
+.hero-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  text-align: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.nav-container {
+  padding: 0 4vw;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+  justify-content: center;
+}
+
+.nav-links a {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+}
+
+.container {
+  padding: 0 4vw;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.8rem 1.5rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  border-radius: 0.75rem;
+}
+
+.floating-elements {
+  display: none;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.bg-orb {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 250px;
+  }
+}
