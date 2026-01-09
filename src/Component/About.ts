@@ -34,7 +34,7 @@ export function createAbout(): HTMLElement {
     aboutText.className = 'about-text';
 
     const description = document.createElement('p');
-    description.textContent = "I'm a passionate 3D Game Engine Developer who thrives on working with diverse technologies. From web development to emerging tech, I enjoy building efficient, scalable, and impactful solutions that solve real-world problems and push the boundaries of innovation.";
+    description.textContent = "I'm a passionate Graphics Engineer who thrives on working with diverse technologies. From web development to emerging tech, I enjoy building efficient, scalable, and impactful solutions that solve real-world problems and push the boundaries of innovation.";
 
     // Stats grid
     const statsGrid = document.createElement('div');

@@ -1,5 +1,5 @@
 // Hero component - vanilla TypeScript
-import profileImage from '../assets/varatharajan.jpg';
+import profileImage from '../assets/Varatharajan_photo.png';
 import type { ScrollToContact } from '../types.ts';
 
 interface FloatingCard {
@@ -37,14 +37,14 @@ export function createHero(scrollToContact: ScrollToContact): HTMLElement {
   subtitle.textContent = `I'm T VARATHARAJAN `;
 
   // Role
-  const role = document.createElement('h2');
+  const role = document.createElement('h4');
   role.className = 'hero-role fade-in';
-  role.textContent = '3D Game Engine Developer';
+  role.textContent = 'Graphics Engineer';
 
   // Description
   const description = document.createElement('p');
   description.className = 'hero-description fade-in';
-  description.textContent = 'Passionate about creating innovative digital solutions with modern technologies';
+  description.textContent = 'Graphics Engineer specializing in WebGL & WebGPU, focused on real-time rendering, custom engines, and high-performance web-based 3D graphics.';
 
   // Buttons
   const buttonsDiv = document.createElement('div');
@@ -63,8 +63,8 @@ export function createHero(scrollToContact: ScrollToContact): HTMLElement {
 
   // Download Resume button
   const resumeBtn = document.createElement('a');
-  resumeBtn.href = 'T VARATHA RAJAN _ RESUME.pdf';
-  resumeBtn.download = 'T VARATHA RAJAN _RESUME.pdf';
+  resumeBtn.href = '/TVaratharajan.pdf';
+  resumeBtn.download = 'VARATHARAJAN_RESUME.pdf';
   resumeBtn.className = 'btn-secondary flex items-center gap-2';
   resumeBtn.innerHTML = `
     <span>Download Resume</span>

@@ -39,10 +39,10 @@ export function createExperience(): HTMLElement {
 
     const experiences: ExperienceItem[] = [
         {
-            role: '3D Game Engine Developer',
+            role: 'Software Developer – Immersive Web Graphics ',
             company: 'Hexr Factory',
             date: 'Sep 11, 2023 - Present',
-            description: 'Working on game engine development involving multiple graphics APIs like WebGL and WebGPU. Focused on real-time rendering, performance optimization, and building scalable 3D systems and tools.'
+            description: 'Developed a production-grade custom 3D rendering engine using WebGL and WebGPU, featuring modular PBR shaders (GLSL/WGSL), optimized GLTF pipelines, real-time lighting and physics integration, achieving 60 FPS performance for scalable, interactive web-based 3D applications.'
         },
     ];
 

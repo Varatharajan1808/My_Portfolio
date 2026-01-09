@@ -37,20 +37,20 @@ export function createSkills(): HTMLElement {
 
     const skillCategories: SkillCategory[] = [
         {
-            title: 'Core Programming & Engine Development',
-            skills: ['JavaScript', 'TypeScript', 'WebGL', 'WebGPU', '3D Engine Development']
+            title: 'Programming Languages',
+            skills: ['JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'GLSL', 'WGSL', ]
         },
         {
-            title: 'Frontend & UI Design',
-            skills: ['React', 'Tailwind CSS', 'HTML5', 'CSS3', 'Canvas', 'Figma (Basic)', 'Canva (Editing)']
+            title: 'Graphics APIs & Frameworks',
+            skills: [ 'WebGL', 'WebGPU', 'Three.js', 'React Three Fiber']
         },
         {
-            title: 'Backend & Databases',
-            skills: ['Java (JDBC, Servlets)', 'SQL']
+            title: 'Tools & Build Systems',
+            skills: ['Blender', 'Git', 'Github', 'VS Code', 'Chrome DevTools', 'Jira']
         },
         {
-            title: 'Tools & Research',
-            skills: ['Blender (3D Modeling Research)', 'Three.js (Research & Prototyping)', 'Git', 'VS Code', 'PlayCanvas']
+            title: '3D Asset Pipelines',
+            skills: ['GLTF 2.0', 'GLB', 'Texture Optimization', 'Material Authoring']
         }
     ];
 

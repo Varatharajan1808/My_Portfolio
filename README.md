@@ -68,7 +68,7 @@ src/
 │
 ├── assets/
 │   ├── TVR_LOGO.png
-│   ├── varatharajan.jpg
+│   ├── varatharajan_photo.png
 │   └── react.svg
 │
 ├── main.ts

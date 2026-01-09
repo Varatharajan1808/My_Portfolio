@@ -47,8 +47,8 @@ export function createProjects(): HTMLElement {
         {
             icon: '💻',
             title: '3D Custom Game Engine',
-            description: 'Developed a real-time rendering engine using WebGL/WebGPU, Javascript and TypeScript; implemented shaders, materials, lighting, raycasting, and core engine architecture.',
-            tech: ['WebGL', 'WebGPU', 'JavaScript', `Typescript`]
+            description: 'Developed a real-time rendering engine using WebGL, Javascript and TypeScript; implemented shaders, materials, lighting, raycasting, and core engine architecture.',
+            tech: ['WebGL', 'JavaScript', `Typescript`]
         },
     ];
 
