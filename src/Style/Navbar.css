@@ -1,0 +1,315 @@
+/* === Top Navigation === */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 11, 13, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  padding: 0.75rem 0;
+}
+
+.nav-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+  z-index: 1001;
+  perspective: 1200px;
+}
+
+.logo-3d-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.logo-layer {
+  font-family: var(--font-mono);
+  font-weight: 950;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  position: relative;
+  display: block;
+}
+
+.logo-layer.base {
+  color: rgba(255, 255, 255, 0.1);
+  transform: translateZ(-20px);
+  filter: blur(2px);
+}
+
+.logo-layer.glitch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--primary-color);
+  transform: translateZ(0);
+  mix-blend-mode: screen;
+  animation: logo-glitch 4s infinite linear alternate-reverse;
+  opacity: 0.8;
+}
+
+.logo-layer.top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  transform: translateZ(20px);
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 20px var(--primary-color),
+    -1px -1px 0 var(--primary-color),
+    1px 1px 0 #ff00ff;
+  background: linear-gradient(to bottom, #fff 40%, #ccc 50%, #888 60%, #fff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scanner Light Effect */
+.logo-layer.top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
+  transform: skewX(-20deg);
+  animation: logo-shine 3s infinite;
+}
+
+@keyframes logo-shine {
+  0% {
+    left: -100%;
+  }
+
+  20% {
+    left: 200%;
+  }
+
+  100% {
+    left: 200%;
+  }
+}
+
+.logo:hover .logo-3d-wrapper {
+  transform: rotateX(25deg) rotateY(-25deg) scale(1.1);
+}
+
+@keyframes logo-glitch {
+  0% {
+    transform: translate(0);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+    clip-path: polygon(0 15%, 100% 15%, 100% 30%, 0 30%);
+  }
+
+  40% {
+    transform: translate(2px, -2px);
+    clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%);
+  }
+
+  60% {
+    transform: translate(-1px, 1px);
+    clip-path: polygon(0 80%, 100% 80%, 100% 100%, 0 100%);
+  }
+
+  80% {
+    transform: translate(1px, -1px);
+    clip-path: polygon(0 0, 100% 0, 100% 10%, 0 10%);
+  }
+
+  100% {
+    transform: translate(0);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+/* Add a glowing underline to the logo area */
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 0 5px var(--primary-color));
+}
+
+.logo:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--space-lg);
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* === Hamburger Menu === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-color);
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 11, 13, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-xl);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links a {
+    font-size: 1.25rem;
+    letter-spacing: 0.15em;
+  }
+
+  .nav-links li {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active li {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-links.active li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .nav-links.active li:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+
+  .nav-links.active li:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+
+  .nav-links.active li:nth-child(4) {
+    transition-delay: 0.25s;
+  }
+
+  .nav-links.active li:nth-child(5) {
+    transition-delay: 0.3s;
+  }
+
+  .nav-links.active li:nth-child(6) {
+    transition-delay: 0.35s;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+}

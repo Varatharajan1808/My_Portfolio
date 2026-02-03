@@ -1,0 +1,117 @@
+/* === Contact Form === */
+.contact-form-wrapper {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xl);
+  transition: all 0.3s ease;
+}
+
+.contact-form-wrapper:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 20px rgba(0, 209, 255, 0.1);
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: var(--space-xl);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 0;
+  font-size: var(--font-sm);
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  outline: none;
+  resize: none;
+  font-family: var(--font-sans);
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  border-bottom-color: var(--primary-color);
+}
+
+.form-label {
+  position: absolute;
+  top: 0.75rem;
+  left: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+}
+
+.form-input:focus~.form-label,
+.form-input:not(:placeholder-shown)~.form-label {
+  top: -1rem;
+  font-size: 0.65rem;
+  color: var(--primary-color);
+}
+
+/* === Submit Button === */
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: var(--bg-primary);
+  border: none;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.submit-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 209, 255, 0.3);
+}
+
+.submit-btn:disabled {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.submit-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+  .contact-form-wrapper {
+    padding: var(--space-lg);
+  }
+
+  .form-group {
+    margin-bottom: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-wrapper {
+    padding: var(--space-md);
+  }
+
+  .form-label {
+    font-size: 0.7rem;
+  }
+
+  .submit-btn {
+    padding: 0.875rem;
+    font-size: 0.875rem;
+  }
+}

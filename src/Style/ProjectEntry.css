@@ -1,0 +1,348 @@
+.project-entry-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-primary);
+    z-index: 9999;
+    overflow: hidden;
+    color: var(--text-primary);
+}
+
+.entry-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.1;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+    pointer-events: none;
+}
+
+.entry-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    z-index: 10;
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+}
+
+.entry-card {
+    position: relative;
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.entry-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 60px rgba(16, 185, 129, 0.1);
+}
+
+.entry-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.entry-status-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary-color);
+    animation: pulse-gate 2s infinite;
+}
+
+.entry-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.engine-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--primary-color);
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}
+
+.entry-card:hover .engine-icon {
+    transform: rotate(180deg) scale(1.1);
+    opacity: 1;
+}
+
+.scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    opacity: 0.2;
+    animation: scan 3s linear infinite;
+    pointer-events: none;
+}
+
+.entry-info {
+    text-align: center;
+}
+
+.entry-info h1 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.1em;
+}
+
+.entry-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--border);
+    color: var(--primary-color);
+    background: rgba(0, 209, 255, 0.03);
+    border-radius: var(--radius-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: inset 0 0 20px rgba(0, 209, 255, 0.05);
+}
+
+.entry-action span {
+    text-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    animation: textGlow 2s infinite alternate ease-in-out;
+}
+
+.entry-card:hover .entry-action {
+    background: rgba(0, 209, 255, 0.08);
+    box-shadow: 0 0 30px rgba(0, 209, 255, 0.15);
+    color: white;
+}
+
+.entry-card:hover .entry-action span {
+    text-shadow: 0 0 20px rgba(0, 209, 255, 0.8), 0 0 30px rgba(0, 209, 255, 0.4);
+}
+
+@keyframes textGlow {
+    from {
+        opacity: 0.8;
+        filter: brightness(1);
+    }
+
+    to {
+        opacity: 1;
+        filter: brightness(1.5);
+    }
+}
+
+.corner-decor {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: var(--primary-color);
+    border-style: solid;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.entry-card:hover .corner-decor {
+    opacity: 1;
+}
+
+.top-left {
+    top: -2px;
+    left: -2px;
+    border-width: 2px 0 0 2px;
+}
+
+.top-right {
+    top: -2px;
+    right: -2px;
+    border-width: 2px 2px 0 0;
+}
+
+.bottom-left {
+    bottom: -2px;
+    left: -2px;
+    border-width: 0 0 2px 2px;
+}
+
+.bottom-right {
+    bottom: -2px;
+    right: -2px;
+    border-width: 0 2px 2px 0;
+}
+
+.entry-stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stat-value {
+    color: var(--text-primary);
+}
+
+@keyframes scan {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(500%);
+    }
+}
+
+@keyframes pulse-gate {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.project-entry-container.fade-out {
+    animation: exit-engine 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes exit-engine {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+        filter: blur(20px);
+    }
+}
+
+.text-xs {
+    font-size: 0.75rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+.opacity-70 {
+    opacity: 0.7;
+}
+
+.entry-hint {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    animation: fadeInOut 2s infinite ease-in-out;
+}
+
+.hint-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+}
+
+.hint-bar {
+    width: 40px;
+    height: 2px;
+    background: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.entry-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(0, 209, 255, 0.05),
+            transparent);
+    transition: none;
+    pointer-events: none;
+}
+
+.entry-card:hover::after {
+    left: 100%;
+    transition: left 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+}
+
+/* Floating animation for the whole content */
+.entry-content {
+    animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}

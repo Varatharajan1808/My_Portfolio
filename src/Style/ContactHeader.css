@@ -1,0 +1,30 @@
+/* === Contact Header === */
+.contact-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.contact-title {
+  font-family: var(--font-mono);
+  font-size: var(--font-3xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-xs);
+}
+
+.contact-subtitle {
+  font-family: var(--font-mono);
+  font-size: var(--font-sm);
+  color: var(--primary-color);
+  opacity: 0.8;
+  margin-bottom: var(--space-md);
+}
+
+.contact-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--primary-color);
+  margin: 0 auto;
+}
