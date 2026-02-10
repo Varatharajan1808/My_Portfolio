@@ -7,6 +7,7 @@ export function createAbout() {
     const element: HTMLElement = config.element;
     element.id = 'about';
     element.className = 'section';
+    console.log(element);
 
     function render(): string {
         return `
