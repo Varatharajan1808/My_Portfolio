@@ -1,141 +1,72 @@
-# ENGINE ARCHITECTURE: VARATHARAJAN_PORTFOLIO
+# My Portfolio
 
-> **v2.0.1** | **System Status**: `STABLE` | **Render Pipeline**: `WEBGL/WEBGPU`
+Personal portfolio site built with vanilla TypeScript — no React, no Vue, just raw TS and a custom component system.
 
-A high-performance personal portfolio built on a **custom TypeScript component system**, designed to showcase Graphics Engineering and Low-Level Architecture skills.
-
-**Live Deployment:** [Launch System](https://varatharajanportfolio.vercel.app/) | **Data Log:** [Download Resume](./public/resume.pdf)
+**Live:** [varatharajanportfolio.vercel.app](https://varatharajanportfolio.vercel.app/)
 
 ---
 
-## 1.0 SYSTEM OVERVIEW
+## Why No Framework?
 
-This repository contains the source code for a custom-built web, adhering to **ECS (Entity Component System)** principles slightly modified for DOM manipulation. It abandons heavy frameworks (React/Vue) in favor of a lightweight, vanilla TypeScript architecture to demonstrate deep understanding of:
-- **State Management**: Custom observable-based state storage.
-- **Component Lifecycle**: Manual mount/update/unmount orchestration.
-- **Rendering Optimization**: Direct DOM manipulation with localized updates.
-- **3D Graphics**: Integration of WebGL/WebGPU visuals (glTF rendering, shaders).
+I wanted to prove I actually understand how things work under the hood. So instead of `npx create-react-app`, I wrote my own component lifecycle (`mount`, `update`, `unmount`), my own state management, and wired up the DOM manually. It's not about reinventing the wheel — it's about knowing how the wheel works.
 
----
+## Tech Stack
 
-## 2.0 KERNEL DEPENDENCIES
+- **TypeScript** — the whole thing is typed
+- **Vite** — dev server + bundler
+- **Vanilla CSS** — custom properties, animations, 3D transforms
+- **EmailJS** — contact form sends emails without a backend
 
-The engine minimizes external bloat, relying on a focused set of core libraries:
-
-### 2.1 Core Runtime
-- **TypeScript**: Static typing for architectural robustness.
-- **Vite**: High-velocity build toolchain and dev server (HMR enabled).
-- **ES6+ Modules**: Native modularity.
-
-### 2.2 Visual Systems
-- **HTML5 & CSS3**: Semantic structure and high-performance CSS animations.
-- **TailwindCSS 4.1.7**: Utility-first atomic styling for layout scaffolding.
-- **Custom CSS Variables**: Theming engine (Root.css) for global aesthetic control.
-
-### 2.3 IO / Communications
-- **@emailjs/browser**: Serverless SMTP transmission protocol for the Contact interface.
-- **Intersection Observer API**: Viewport-based rendering triggers.
-
----
-
-## 3.0 DIRECTORY MAP
-
-Hierarchy is organized by functional modules rather than framework convention.
+## Project Structure
 
 ```
 src/
-├── core/                   # ENGINE KERNEL
-│   ├── BaseComponent.ts    # Abstract Component Class (Mount, Update, Unmount)
-│   └── State.ts           # Pub/Sub State Management System
+├── core/                   # component system + state management
+│   ├── BaseComponent.ts
+│   └── State.ts
 │
-├── components/             # UI MODULES
-│   ├── App.ts              # Root Orchestrator
-│   ├── Navbar.ts           # Navigation Interface
-│   ├── Hero.ts             # Entry & idle animations
-│   ├── ProjectEntry.ts     # Initial load sequence
-│   ├── Projects.ts         # 3D Gallery & Showcase
-│   ├── Skills.ts           # Tech Tree Visualization
-│   ├── Experience.ts       # Timeline & History
-│   └── ContactSection.ts   # I/O Interface
+├── components/             # each section of the site
+│   ├── App.ts
+│   ├── Navbar.ts
+│   ├── Hero.ts
+│   ├── Projects.ts
+│   ├── Skills.ts
+│   ├── Experience.ts
+│   └── ContactSection.ts
 │
-├── Style/                  # VISUAL ASSETS
-│   ├── Root.css            # Global Variables (Theming)
-│   ├── Project.css         # 3D Transforms logic
-│   └── [Module].css        # Component-scoped styling
+├── Style/                  # CSS files, one per component
+│   ├── Root.css            # global variables + theme
+│   └── ...
 │
-└── assets/                 # BINARY DATA
-    └── projects/           # Screenshots & Texture maps
+└── assets/                 # images, videos
 ```
 
----
+## Running Locally
 
-## 4.0 BOOT SEQUENCE (LOCAL DEPLOYMENT)
+```bash
+git clone https://github.com/Varatharajan1808/My_Portfolio.git
+cd My_Portfolio
+npm install
+npm run dev
+```
 
-To initialize the engine on a local machine:
+Open `http://localhost:5173` and you're good.
 
-### 4.1 Prerequisites
-- Node.js Runtime (v16+)
-- NPM Package Manager
+## Some Things Worth Noting
 
-### 4.2 Initialization
-1.  **Clone Repository:**
-    ```bash
-    git clone [REPO_URL]
-    cd my-portfolio
-    ```
+- **Custom component lifecycle** — every section goes through `mount()` → `update()` → `unmount()`. No virtual DOM, just direct DOM updates where needed.
+- **3D gallery** — the project screenshots use CSS 3D transforms (`rotateY`, `translateZ`) for that depth effect. It's all CSS, no Three.js.
+- **Contact form** — validates inputs client-side, sends via EmailJS, shows feedback. Nothing fancy, just works.
 
-2.  **Install Dependencies:**
-    ```bash
-    npm install
-    ```
+## About Me
 
-3.  **Execute Start Script:**
-    ```bash
-    npm run dev
-    ```
+**Varatharajan** — Graphics Engineer working with WebGL/WebGPU at Hexr Factory.
 
-4.  **Access Port:**
-    Open `http://localhost:5173` to view the render output.
+I like building things close to the metal. If there's an abstraction, I probably want to look inside it.
 
----
+- [GitHub](https://github.com/Varatharajan1808)
+- ciazvanish2000@gmail.com
 
-## 5.0 SYSTEM CAPABILITIES
+## License
 
-### 5.1 Custom Component Architecture
-Every UI element extends `BaseComponent`, implementing a predictable lifecycle:
-- `mount()`: Allocates DOM resources and attaches listeners.
-- `update()`: Reactively modifies DOM based on state changes.
-- `unmount()`:Garbage collection, removing listeners and intervals to prevent memory leaks.
-
-### 5.2 3D Gallery Module
-A CSS3D-powered project showcase featuring:
-- **Perspective Transforms**: `translateZ` and `rotateY` for depth perception.
-- **Interactive Hover States**: Physics-simulated focus effects.
-- **Layout Engine**: `object-fit: contain` logic to ensure zero-cropping of project assets.
-
-### 5.3 Communication Protocol
-The `ContactSection` module implements a secure handshake with EmailJS:
-- **Validation**: Client-side regex checks for signal integrity.
-- **Async Transmission**: Non-blocking `Promise`-based email dispatch.
-- **Auto-Response**: Instant automated acknowledgment signal.
-
----
-
-## 6.0 DEVELOPER PROFILE
-
-**Varatharajan**
-*Full Stack Web Developer | WebGL/WebGPU *
-Hexr Factory
-
-Focused on bridging the gap between low-level graphics programming and high-level web accessibility.
-
-**Signal Channels:**
-- **Email:** ciazvanish2000@gmail.com
-- **GitHub:** [@Varatharajan1808](https://github.com/Varatharajan1808)
-
----
-
-## 7.0 LICENSE
-
-**MIT License** | Open Source Architecture
-*Engineered by Varatharajan | Last Compile: January 2026*
+MIT
