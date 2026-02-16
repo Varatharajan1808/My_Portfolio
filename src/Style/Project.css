@@ -1,15 +1,15 @@
-/* === Projects Highlight Layout === */
 .projects-container {
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 /* === Project Card === */
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  max-width: 1000px;
-  margin: 0 auto var(--space-2xl);
+  grid-template-columns: repeat(auto-fit, minmax(min(450px, 100%), 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  width: 100%;
+  max-width: 100%;
 }
 
 .project-card {
@@ -24,6 +24,7 @@
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  max-width: 100%;
 }
 
 .project-card.highlighted {
@@ -118,6 +119,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .flex-between {
@@ -183,8 +186,38 @@
 }
 
 @media (max-width: 991px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
   .project-image {
     height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    overflow: hidden;
+    max-width: 100vw;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+
+  .project-content {
+    padding: var(--space-md);
+  }
+
+  .project-content h3 {
+    font-size: var(--font-base);
+    word-break: break-word;
+  }
+
+  .project-content p {
+    font-size: var(--font-xs);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 }
 
@@ -197,24 +230,31 @@
   .gallery-3d-container {
     padding: 20px 0;
     perspective: none;
-    overflow: visible;
+    overflow: hidden;
+    /* Prevent page scroll */
+    width: 100%;
+    display: block;
+    /* Remove flex centering which mimics desktop */
   }
 
-  /* Horizontal Scroll Track */
+  /* Vertical Stack for Gallery with Internal Scroll */
   .gallery-track {
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 16px;
-    padding: 0 20px;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 5%;
     width: 100%;
     transform-style: flat;
-    justify-content: flex-start;
-    -webkit-overflow-scrolling: touch;
-    /* Hide Scrollbar */
-    scrollbar-width: none;
-    counter-reset: gallery-counter;
+    overflow-x: visible;
+    /* No horizontal scroll */
+    max-height: 60vh;
+    /* Limit height */
+    overflow-y: auto;
+    /* Enable internal scroll */
+    scrollbar-width: thin;
+    /* Show thin scrollbar */
+    padding-top: 10px;
+    padding-bottom: 20px;
   }
 
   .gallery-track::-webkit-scrollbar {
@@ -224,8 +264,9 @@
   /* Full Width Cards without 3D */
   .gallery-item {
     width: 85vw;
-    height: auto;
-    aspect-ratio: 16/9;
+    height: 50vw;
+    /* Force aspect ratio based on width */
+    max-height: 250px;
     flex-shrink: 0;
     scroll-snap-align: center;
     transform: none !important;

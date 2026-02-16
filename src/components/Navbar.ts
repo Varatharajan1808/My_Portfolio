@@ -1,4 +1,4 @@
-import { createComponent, mountComponent, updateComponent } from '../core/BaseComponent';
+import { createComponent, mountComponent } from '../core/BaseComponent';
 import { createState, StateManager } from '../core/State';
 import '../Style/Navbar.css';
 
@@ -31,7 +31,7 @@ export function createNavbar(props: NavbarProps) {
     ];
 
     function render(): string {
-        const { isMenuOpen } = state.get();
+        // Render static structure, classes will be handled by update/mount
         return `
             <nav class="top-nav">
                 <div class="nav-container">
@@ -44,7 +44,7 @@ export function createNavbar(props: NavbarProps) {
                     </div>
 
                     <button 
-                        class="hamburger ${isMenuOpen ? 'active' : ''}"
+                        class="hamburger"
                         aria-label="Toggle menu"
                         id="hamburger-btn"
                     >
@@ -53,7 +53,7 @@ export function createNavbar(props: NavbarProps) {
                         <span class="hamburger-line"></span>
                     </button>
 
-                    <ul class="nav-links ${isMenuOpen ? 'active' : ''}">
+                    <ul class="nav-links">
                         ${navItems.map(item => `
                             <li>
                                 <a href="#${item.id}" class="nav-link" data-id="${item.id}">
@@ -70,6 +70,13 @@ export function createNavbar(props: NavbarProps) {
     function attachEvents(): void {
         const hamburger = element.querySelector('#hamburger-btn');
         if (hamburger) {
+            // Remove old listener if any to prevent duplicates? 
+            // BaseComponent's updateComponent re-attaches, but we are NOT calling it anymore.
+            // But mountComponent calls it once.
+            // We need to ensure we don't bind multiple times if we ever did re-render.
+            // Since we are changing update() to NOT re-render, attachEvents is called ONCE at mount.
+            // So logical!
+
             hamburger.addEventListener('click', () => {
                 const { isMenuOpen } = state.get();
                 state.update({ isMenuOpen: !isMenuOpen });
@@ -89,7 +96,10 @@ export function createNavbar(props: NavbarProps) {
         });
     }
 
-    function afterMount(): void { }
+    function afterMount(): void {
+        // Set initial state
+        update();
+    }
 
     function mount(parent: HTMLElement): void {
         unsubscribe = state.subscribe(() => update());
@@ -97,7 +107,20 @@ export function createNavbar(props: NavbarProps) {
     }
 
     function update(): void {
-        updateComponent(element, render, attachEvents, afterMount);
+        // Manual DOM update to preserve transitions
+        const { isMenuOpen } = state.get();
+        const hamburger = element.querySelector('.hamburger');
+        const navLinks = element.querySelector('.nav-links');
+
+        if (hamburger && navLinks) {
+            if (isMenuOpen) {
+                hamburger.classList.add('active');
+                navLinks.classList.add('active');
+            } else {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        }
     }
 
     function unmount(): void {
