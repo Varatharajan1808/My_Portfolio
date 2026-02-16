@@ -1,0 +1,64 @@
+/* === Contact Method === */
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+  position: relative;
+  width: 100%;
+}
+
+.contact-method:hover {
+  border-color: var(--primary-color);
+  background: var(--surface);
+  transform: translateX(5px);
+}
+
+.method-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.contact-method:hover .method-icon {
+  background: var(--primary-color);
+  color: var(--bg-primary);
+  border-color: var(--primary-color);
+}
+
+.method-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.method-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.method-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.method-link:hover {
+  color: var(--primary-color);
+}

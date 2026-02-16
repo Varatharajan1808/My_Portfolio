@@ -1,0 +1,37 @@
+/* === Contact Info === */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.info-title {
+  font-family: var(--font-mono);
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+}
+
+.info-description {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: var(--font-base);
+  max-width: 60ch;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+    text-align: center;
+    align-items: center;
+  }
+}
