@@ -1,14 +1,37 @@
-# My Portfolio
+# Varatharajan Portfolio
 
-Personal portfolio site built with vanilla TypeScript — no React, no Vue, just raw TS and a custom component system.
+A personal portfolio showcasing my work in graphics programming, rendering engine development, shaders and WebGL/WebGPU projects.
 
-**Live:** [varatharajanportfolio.vercel.app](https://varatharajanportfolio.vercel.app/)
+The portfolio itself is built from scratch using TypeScript with a custom component system, demonstrating low-level frontend architecture without relying on UI frameworks.
+
+## Live Demo : 
+  [varatharajanportfolio.vercel.app](https://varatharajanportfolio.vercel.app/)
 
 ---
 
-## Why No Framework?
+## Architecture
 
-I wanted to prove I actually understand how things work under the hood. So instead of `npx create-react-app`, I wrote my own component lifecycle (`mount`, `update`, `unmount`), my own state management, and wired up the DOM manually. It's not about reinventing the wheel — it's about knowing how the wheel works.
+Rather than using a frontend framework, this portfolio uses a lightweight custom component architecture written in TypeScript.
+
+It includes:
+
+- Component lifecycle
+- State management
+- DOM rendering
+- Event handling
+
+The goal was to better understand frontend architecture while keeping the application lightweight and maintainable.
+
+## Portfolio Features
+
+- Responsive design
+- Custom TypeScript component system
+- Project showcase
+- Experience timeline
+- Skills section
+- Contact form
+- Dark theme
+- CSS 3D animations
 
 ## Tech Stack
 
@@ -60,12 +83,12 @@ Open `http://localhost:5173` and you're good.
 
 ## About Me
 
-**Varatharajan** — Graphics Engineer working with WebGL/WebGPU at Hexr Factory.
+**Varatharajan** — 3D_Engine_Developer specializing in browser-based graphics engines, WebGL, WebGPU, rendering pipelines, shader programming, and real-time rendering.
 
-I like building things close to the metal. If there's an abstraction, I probably want to look inside it.
+I enjoy building software close to the metal and understanding how graphics systems work under the hood. Rather than relying on abstractions, I like exploring the architecture behind rendering engines and modern GPU programming.
 
-- [GitHub](https://github.com/Varatharajan1808)
-- ciazvanish2000@gmail.com
+- GitHub: https://github.com/Varatharajan1808
+- Email: ciazvanish2000@gmail.com
 
 ## License
 

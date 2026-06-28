@@ -2,7 +2,7 @@
 
 ## 1. IDENTITY_SUMMARY
 **Name:** Varatharajan
-**Role:** Graphics Engineer / 3D Engine Developer
+**Role:** 3D_Engine_Developer
 **Experience:** 2+ Years in specialized graphics programming
 **Education:** 
 - MBA in Human Resource Management (Graduated 2023, Alagappa University)
@@ -52,8 +52,16 @@ Key architectural highlights:
 
 ## 4. WORK_HISTORY
 
-### Graphics Engineer (WebGL/WebGPU) | Hexrfactory Immersive Tech Pvt Ltd
-*2023 – PRESENT*
+### 3D Engine Developer | Aalai Immersive Tech PVT LTD
+*MAY 2026 – PRESENT*
+- **WebGPU CAD Systems:** Developing browser-based CAD systems using a custom WebGPU rendering engine.
+- **Geometric Workflows:** Implementing CAD entities, geometry processing, and interactive CAD workflows.
+- **Rendering Components:** Building reusable rendering components and enhancing WebGPU-based CAD capabilities.
+
+---
+
+### Software Developer – Web-Based 3D Graphics | Hexrfactory Immersive Tech Pvt Ltd
+*DEC 2023 – APR 2026*
 - **Custom Engine Development:** Designed core systems (Scene, Renderer, Camera, Mesh) with full control over draw calls.
 - **Asset Pipeline:** Implemented glTF import/export for structured scene management.
 - **Material System:** Developed a unified system supporting PBR, normal maps, and alpha transparency.
@@ -62,6 +70,10 @@ Key architectural highlights:
 - **Tooling:** Built transform gizmos and interaction systems from the ground up.
 
 ---
+
+### Software Developer Trainee | Hexrfactory Immersive Tech Pvt Ltd
+*SEP 2023 – DEC 2023*
+- **2D Graphics Editor:** Developed a browser-based 2D graphics editor inspired by modern design tools using HTML, CSS, JavaScript, and WebGL.
 
 ## 5. ACTIVE_PROJECTS
 

@@ -33,12 +33,12 @@ export function createHero(props: HeroProps) {
                     <div class="hero-profile">
                         <img src="${profileImage}" alt="Varatharajan" class="hero-image" />
                     </div>
-                    <span class="hero-role fade-in">Graphics Engineer</span>
+                    <span class="hero-role fade-in">3D_Engine_Developer</span>
                     <h1 class="hero-title fade-in">
-                        <span> Varatharajan T</span>
+                        <span>Varatharajan&nbsp;T</span>
                     </h1>
                     <p class="hero-description fade-in">
-                        Specializing in high-performance rendering pipelines and GPGPU optimizations using WebGL and WebGPU.
+                        Specializing in high-performance rendering pipelines and GPU optimizations using WebGL and WebGPU.
                     </p>
                     <div class="hero-buttons fade-in">
                         <button class="btn-primary" id="contact-btn">

@@ -35,7 +35,7 @@ export function createProjectEntry(props: ProjectEntryProps) {
 
                         <div class="entry-info">
                             <h1 class="font-mono">ENGINE_EXPLORER_V2</h1>
-                            <p class="font-mono text-xs opacity-70">GRAPHICS_ENGINEER // PORTFOLIO_ENTRY</p>
+                            <p class="font-mono text-xs opacity-70">3D_Engine_Developer // PORTFOLIO_ENTRY</p>
                         </div>
 
                         <div class="entry-action">

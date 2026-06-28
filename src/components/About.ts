@@ -7,7 +7,6 @@ export function createAbout() {
     const element: HTMLElement = config.element;
     element.id = 'about';
     element.className = 'section';
-    console.log(element);
 
     function render(): string {
         return `
@@ -20,14 +19,14 @@ export function createAbout() {
                 <div class="about-content">
                     <div class="about-text">
                         <p>
-                            Graphics Engineer / 3D Engine Developer focused on building high-performance, real-time rendering engines for the web.
+                            3D_Engine_Developer focused on building high-performance, real-time rendering engines for the web.
 I specialize in low-level graphics programming with a strong foundation in GPU architecture, rendering pipelines, and memory management, applicable across both WebGL and WebGPU.
 My work emphasizes engine architecture, efficient resource management, shader design, and mathematical correctness, bridging the gap between theory and practical GPU execution to deliver scalable and performance-aware rendering systems.
                         </p>
                         <div class="stats-grid">
                             <div class="stat-item">
                                 <span class="stat-label">EXP_LEVEL</span>
-                                <span class="stat-number">2+ YEARS</span>
+                                <span class="stat-number">2.5+ YEARS</span>
                             </div>
                             <div class="stat-item">
                                 <span class="stat-label">PRIMARY_API</span>

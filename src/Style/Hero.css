@@ -55,11 +55,11 @@
 }
 
 .hero-title {
-  font-size: clamp(3rem, 5vw, 4.5rem);
-  font-weight: 800;
+  font-size: clamp(3rem, 5vw, 4rem);
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: var(--space-xs);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   line-height: 1.1;
   text-transform: uppercase;
 }
@@ -67,6 +67,7 @@
 .hero-title span {
   color: var(--primary-color);
   display: block;
+  white-space: nowrap;
 }
 
 .hero-role {
@@ -724,8 +725,7 @@
   }
 
   .hero-title {
-    font-size: clamp(1.8rem, 8vw, 2.8rem);
-    word-break: break-word;
+    font-size: clamp(1.5rem, 8vw, 2.8rem);
   }
 
   .hero-role {
@@ -856,7 +856,7 @@
   }
 
   .hero-title {
-    font-size: clamp(1.75rem, 8vw, 2.25rem);
+    font-size: clamp(1.4rem, 8vw, 2.25rem);
   }
 
   .hero-buttons {

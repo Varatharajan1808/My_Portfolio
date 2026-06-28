@@ -16,28 +16,20 @@ export function createSkills() {
 
     const skills: SkillCategory[] = [
         {
-            category: "GRAPHICS_&_RENDERING",
-            tags: ["WebGL", "WebGPU", "GPU Pipelines", "Shaders", "Render Passes", "Draw Submission", "Depth Testing", "Framebuffers", "Post-Processing", "Blinn-Phong", "Gamma Correction"]
+            category: "GRAPHICS APIS & SHADERS",
+            tags: ["WebGL", "WebGPU", "GLSL / WGSL", "GPU Pipelines", "Render Passes", "Post-Processing"]
         },
         {
-            category: "ENGINE_&_SYSTEMS",
-            tags: ["Scene Graph Systems", "Transform Hierarchies", "Render Loop", "Frame Lifecycle", "Resource Management", "Asset Management", "FPS Debugging", "Draw Call Analysis"]
+            category: "ENGINE ARCHITECTURE",
+            tags: ["Scene Graph", "Render Loop", "Resource Management", "ECS Pattern", "Transform Hierarchies"]
         },
         {
-            category: "3D_DATA_&_MATERIALS",
-            tags: ["glTF 2.0", "Buffers & Accessors", "Node Hierarchies", "Texture Baking", "PBR Textures", "Albedo Maps", "Normal Maps", "AO Maps", "Roughness Maps"]
+            category: "3D ASSETS & MATH",
+            tags: ["glTF 2.0 Workflow", "Linear Algebra", "PBR Materials", "Computational Geometry"]
         },
         {
-            category: "ARCHITECTURE_&_MATH",
-            tags: ["TypeScript", "Linear Algebra", "Computational Geometry", "Entity Component System(ECS)", "Transformation Math"]
-        },
-        {
-            category: "GRAPHICS_KNOWLEDGE",
-            tags: ["MVP Pipeline", "Normal Matrix", "Forward/Deferred Shading", "Resource Lifecycle", "GPU Memory Layout"]
-        },
-        {
-            category: "TOOLS",
-            tags: ["Git", "GitHub", "Blender", "VS Code", "Chrome DevTools"]
+            category: "DEVELOPMENT TOOLS",
+            tags: ["Git", "GitHub", "Blender", "Chrome DevTools", "Vite"]
         }
     ];
 
@@ -46,7 +38,7 @@ export function createSkills() {
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">TECHNICAL_CAPABILITIES</h2>
-                    <p class="section-subtitle">Core competencies in graphics engineering</p>
+                    <p class="section-subtitle">Core competencies in 3D_Engine_Developer</p>
                     <div class="section-divider"></div>
                 </div>
                 <div class="skills-grid">
